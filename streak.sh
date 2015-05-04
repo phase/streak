@@ -9,11 +9,16 @@
 #  /'\_   _/'\
 #  \___)=(___/
 
-#Reset current repo
-rm -rf .git
-git init
-git add -A
-git commit -m "Initial Commit"
+read -p "What is your GitHub username?" username
+read -p "What repo do you want to contribute to?" repo
+
+url="https://github.com/$username/$repo"
+
+#Create repos for pushing
+git clone $url orig
+git clone $url streak
+
+cd streak
 
 #Create fake date
 d="Sun 14 Feb 2016 00:00:00"
@@ -36,5 +41,8 @@ while [ $i -le 1000000 ]; do
   i=$(( $i+1 ))
 done
 
-#Clean repo
-git gc
+git gc #Clean repo
+
+git push $url master #Push fake commits
+cd ../orig/
+git push $url master -f #Remove previous commits
