@@ -21,7 +21,8 @@ git clone $url streak
 cd streak
 
 #Create fake date
-d="Sun 14 Feb 2016 00:00:00"
+read -d "What day do you want to start from?" date
+d=$(date -d "$d")
 i=1
 
 while [ $i -le 1000000 ]; do
