@@ -48,3 +48,8 @@ git gc #Clean repo
 git push $url master #Push fake commits
 cd ../orig/
 git push $url master -f #Remove previous commits
+
+#Remove local repos
+cd ../
+rm -rf orig
+rm -rf streak
