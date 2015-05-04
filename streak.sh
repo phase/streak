@@ -2,12 +2,12 @@
 
 #This is why you don't have a commit chart.
 #      .--.
-#     |o_o |
-#     |:_/ |
-#    //   \ \
-#   (|     | )
-#  /'\_   _/'\
-#  \___)=(___/
+#     |o_o |   
+#     |:_/ |   Made by Phase (https://github.com/phase)
+#    //   \ \  
+#   (|     | ) Licensed under the MIT License
+#  /'\_   _/'\ 
+#  \___)=(___/ 
 
 read -p "What is your GitHub username?" username
 read -p "What repo do you want to contribute to?" repo
