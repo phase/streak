@@ -22,12 +22,13 @@ cd streak
 
 #Create fake date
 read -d "What day do you want to start from?" date
+read -d "How long do you want the streak to be?" streak
 d=$(date -d "$d")
 i=1
 
-while [ $i -le 1000000 ]; do
+while [ $i -le $streak ]; do
   export GIT_AUTHOR_DATE="$d +0000" #Set commit date as fake date
-  export GIT_COMMIT_DATE=$GIT_AUTHOR_DATE
+  export GIT_COMMIT_DATE="$d +0000"
   
   #Get random commit message
   message=$(curl -sSL http://whatthecommit.com/index.txt)
